@@ -8,17 +8,28 @@ This is a modified version of Preston's 3.0.0 Dev Build server that allows you t
 
 There is currently no way to play Version 2.4.0 of the game, and this aims to solve that.
 
+## Installing Version 2.4.0
+
+1. Install [DepotDownloader](https://github.com/SteamRE/DepotDownloader) and .NET 6.0.
+1. Open a Command Prompt and navigate to the .dll file.
+1. Run the following command, replacing the username and password placeholders with your account details (you must own a valid copy of DBD on Steam):
+```
+    dotnet DepotDownloader.dll -app 381210 -depot 381211 -manifest 8633017681482216550 -username <username> -password <password>
+```
+
 ## How to run
 
 1. Make sure [NodeJS](https://nodejs.org/en/) 14 and [NPM](https://www.npmjs.com/) are installed on the machine you wish to run the server on. Other versions of Node may function, but they have not been tested.
 1. Make sure you have [Fiddler 4](https://www.telerik.com/download/fiddler) installed. This must be running while the server is active.
 1. [Download](https://github.com/ReverseVelocity/dbd-server-2.4.0) and extract the newest release.
 1. Run `setup.bat` (or `setup.sh` on Linux) to install all necessary dependencies.
-1. Run `run.bat` (or `run.sh` on Linux) to start the server.
+1. Run `run.bat` (or `run.sh` on Linux) to start the server. NOTE: You will probably get a Version Check error, do not worry, this is normal.
 
 ## How to use
 
-1. Add the following lines to the end of DefaultEngine.ini (located in DeadByDaylight/Config). Note: depending on where you downloaded the dev build from, this step may already be done.
+1. Go to the folder where your game is installed, and rename the Live Version of the game to something else.
+1. Rename the folder Version 2.4.0 is installed to "Dead By Daylight".
+1. Add the following lines to the end of DefaultEngine.ini (located in DeadByDaylight/Config).
     ```
     [/Script/Engine.NetworkSettings]
     n.VerifyPeer=false
@@ -29,7 +40,7 @@ There is currently no way to play Version 2.4.0 of the game, and this aims to so
     127.0.0.1    cdn.dev.dbd.bhvronline.com
     0.0.0.0     analytic.live.dbd.bhvronline.com
     ```
-1. Launch the game using DeadByDaylight.bat.
+1. Launch the game from Steam.
 
 ## Contributors
 
